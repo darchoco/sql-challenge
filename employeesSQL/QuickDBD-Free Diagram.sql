@@ -29,7 +29,10 @@ CREATE TABLE "dept_manager" (
     "dept_no" string   NOT NULL,
     "emp_no" int   NOT NULL,
     "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
+        "emp_no","from_date"
+     )
 );
 
 -- Table documentation comment 1 (try the PDF/RTF export)
@@ -50,14 +53,20 @@ CREATE TABLE "salaries" (
     "emp_no" int   NOT NULL,
     "salary" int   NOT NULL,
     "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_salaries" PRIMARY KEY (
+        "emp_no","from_date"
+     )
 );
 
 CREATE TABLE "titles" (
     "emp_no" int   NOT NULL,
     "title" string   NOT NULL,
     "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_titles" PRIMARY KEY (
+        "emp_no","from_date"
+     )
 );
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_dept_no" FOREIGN KEY("dept_no")
